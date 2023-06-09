@@ -1,49 +1,50 @@
 # Random Cat Generator
 
-This is a website that generates random cat pictures when the generate button is clicked.
+This is a simple web application that generates random cat images using the "The Cat API". With just a click of a button, you can see a new adorable cat picture!
+
+## Demo
+
+[View Demo](https://prnvgiri.github.io/Random-Cat-generator/)
 
 ## Features
 
-- Fetches cat pictures from Reddit's "r/cat" subreddit.
-- Displays a random cat picture each time the generate button is clicked.
-- Reduces loading time by fetching cat data in advance and storing it for quick retrieval.
-- Always shows new pictures by randomly selecting an image from the available data.
+- Generates random cat images on button click.
+- Responsive design, suitable for desktop and mobile devices.
+- Attribution to the image source.
 
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
+- The Cat API
 
-## Usage
+## Getting Started
+
+To run the Random Cat Generator locally, follow these steps:
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/your-username/random-cat-generator.git
-   ```
+ git clone https://github.com/your-username/random-cat-generator.git
+    ```
 2. Navigate to the project directory:
+   ```bash
+   cd random-cat-generator
+   ```
+3. Open the `index.html` file in a web browser.
 
-  ```bash
-  cd random-cat-generator
-  ```
-  
-3. Open the index.html file in a web browser:
-  
-  open index.html
-  
-4. Click on the "Generate" button to display a random cat picture.
+## Attribution
 
+The cat images are fetched from [The Cat API](https://thecatapi.com/), a free and public API for cat images. The project also includes an attribution to the image source.
 
-## Demo
-You can see a live demo of the website [here](https://prnvgiri.github.io/Random-Cat-generator/).
+## Contributing
 
-Contributing
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-License
-This project is licensed under the MIT License.
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 
-Feel free to modify and adapt the content based on your specific project.
+
 
