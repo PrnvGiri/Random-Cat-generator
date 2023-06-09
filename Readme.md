@@ -25,7 +25,7 @@ To run the Random Cat Generator locally, follow these steps:
 
 1. Clone the repository:
    ```bash
- git clone https://github.com/your-username/random-cat-generator.git
+ git clone https://github.com/prnvgiri/random-cat-generator.git
     ```
 2. Navigate to the project directory:
    ```bash
