@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random Cat Photos Generator</title>
+    <title>Random Cat Generator</title>
     <style>
         body {
             display: flex;
@@ -9,32 +9,20 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
-    
-        h1 {
             text-align: center;
         }
-    
-        #cat-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            margin-top: 20px;
-        }
-    
+
         #cat-img {
             max-width: 500px;
             max-height: 500px;
+            margin: 20px auto;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-    
+        
         #generate-btn {
             display: block;
-            margin-top: 20px;
+            margin: 0 auto;
             padding: 10px 20px;
             font-size: 18px;
             background-color: #4CAF50;
@@ -42,39 +30,51 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #generate-btn:hover {
+            background-color: #45a049;
+        }
+
+        #generate-btn:active {
+            background-color: #3e8944;
+        }
+
+        #attribution {
+            margin-top: 50px;
+            font-style: italic;
+            color: #666;
         }
     </style>
-    
 </head>
 <body>
-    <h1>Random Cat Photos Generator</h1>
+    <h1>Random Cat Generator</h1>
     <div id="cat-container">
-        <img id="cat-img" src="" alt="Random Cat Photo">
+        <img id="cat-img" src="" alt="Random Cat">
     </div>
-    <button id="generate-btn">Generate Random Cat Photo</button>
+    <button id="generate-btn">Generate Random Cat</button>
+
+    <div id="attribution">
+        <p>By Pranav Giri</p>
+    </div>
 
     <script>
-    const generateBtn = document.getElementById("generate-btn");
-    const catImg = document.getElementById("cat-img");
-    let catData = [];
+        const generateBtn = document.getElementById("generate-btn");
+        const catImg = document.getElementById("cat-img");
 
-    function getRandomImage() {
-        const randomIndex = Math.floor(Math.random() * catData.length);
-        const imageUrl = catData[randomIndex].data.url;
-        catImg.src = imageUrl;
-    }
-
-    fetch("https://www.reddit.com/r/cat/.json?limit=100")
-        .then(response => response.json())
-        .then(data => {
-            catData = data.data.children;
-            getRandomImage(); // Display initial random image
-        })
-        .catch(error => {
-            console.log("An error occurred:", error);
+        generateBtn.addEventListener("click", () => {
+            fetch("https://api.thecatapi.com/v1/images/search")
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data[0].url;
+                    catImg.src = imageUrl;
+                })
+                .catch(error => {
+                    console.log("An error occurred:", error);
+                });
         });
-
-    generateBtn.addEventListener("click", getRandomImage);
-</script>
+    </script>
 </body>
 </html>
