@@ -64,7 +64,7 @@
         const generateBtn = document.getElementById("generate-btn");
         const catImg = document.getElementById("cat-img");
 
-        generateBtn.addEventListener("click", () => {
+        function fetchRandomCatPhoto() {
             fetch("https://api.thecatapi.com/v1/images/search")
                 .then(response => response.json())
                 .then(data => {
@@ -74,7 +74,11 @@
                 .catch(error => {
                     console.log("An error occurred:", error);
                 });
-        });
+        }
+
+        window.addEventListener("DOMContentLoaded", fetchRandomCatPhoto);
+
+        generateBtn.addEventListener("click", fetchRandomCatPhoto);
     </script>
 </body>
 </html>
